@@ -1,35 +1,18 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
-    name: 'counter',
+    name: "counter",
     initialState: 0,
     reducers: {
         increment: state => state + 1,
-        decrement: state => state -1
+        decrement: state => state -1,
+        subIncrement: (state, action) => {
+            console.log(action)
+            return state + action.payload
+        }
     }
 })
 
-const store = configureStore({
-    reducer: counterSlice.reducer
-})
+export const {increment, decrement, subIncrement} = counterSlice.actions
 
-const {actions, reducer} = counterSlice
-const {increment, decrement} = actions
-
-// const counterSlice = createSlice({
-//     name: 'counter', // reducers名
-//     initialState: 0, // initialState
-//     reducers: { // reducers
-//       increment: state => state + 1,
-//       decrement: state => state - 1
-//     }
-// })
-  
-// // configureStore を使用、middleware や devTools の設定済み
-// const store = configureStore({
-// reducer: counterSlice.reducer
-// })
-  
-// document.getElementById('increment').addEventListener('click', () => {
-// store.dispatch(counterSlice.actions.increment())
-// })
+export const counterReducer = counterSlice.reducer;
