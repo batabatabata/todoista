@@ -1,5 +1,5 @@
-import { createSlice, current } from "@reduxjs/toolkit";
-import mockDatas from '../components/templates/mock'
+import { createSlice } from "@reduxjs/toolkit";
+import mockDatas from './mock'
 
 const initialState = mockDatas.todoTasks
 

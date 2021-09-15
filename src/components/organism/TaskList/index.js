@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import styles from './index.module.scss';
 import Item from '../../molecules/Item/index';
-import AddTodoButton from '../../molecules/AddTodoButton'
+import AddTodoButton from '../../atoms/AddTodoButton'
 import { addTask } from '../../../modules/task';
 
 function TaskList() {
@@ -15,21 +15,10 @@ function TaskList() {
         dispatch(addTask(newTasks))
     }
 
-    // const editTodo = () => {
-    //     todos[3].content = '編集しました！'
-    //     setTodos(
-    //         [
-    //             ...todos
-    //         ]
-    //     )
-    // }
-
     return(
         <div className={styles.taskList}>
             <div className={styles.taskList__container}>
-                <div className={styles.taskList__header}>
-                    <h2>タスク</h2>
-                </div>
+                <h2 className={styles.taskList__header}>Task List</h2>
                 <div className={styles.taskList__body}>
                     <ul className={styles.taskList__list}>
                         {tasks.map((task) => {
@@ -41,8 +30,6 @@ function TaskList() {
                         })}
                     </ul>
                     <AddTodoButton tasks={tasks} dispatchAddTask={dispatchAddTask}/>
-
-                    {/* <button onClick={() => editTodo()}>編集</button> */}
                 </div>
             </div>
         </div>

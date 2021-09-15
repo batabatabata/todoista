@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import arrowIcon from '../../../arrow.png';
-import DeleteTodoButton from '../DeleteTodoButton';
+import DeleteTodoButton from '../../atoms/DeleteTodoButton';
 import { useDispatch } from 'react-redux';
 import { doneFlag } from '../../../modules/task';
 import { useState, useEffect } from 'react';

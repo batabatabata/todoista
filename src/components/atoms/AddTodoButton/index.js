@@ -11,7 +11,6 @@ function AddTodoButton(props) {
             <input className={styles.addForm__input} onChange={handleChange(setContent)} name="contents" value={content} placeholder="タスク名"/>
             <div className={styles.addForm__btnWrapper}>
                 <button className={styles.addForm__btn} {...(content ? {active: true} : {disabled: true})}>タスクを追加</button>
-                {/* <button className={`${styles.addForm__btn} ${styles["addForm__btn--cancel"]}`}>キャンセル</button> */}
             </div>
         </form>
     )
